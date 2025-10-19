@@ -8,8 +8,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 
-class CounterComposerImpl : CounterComposer {
+@SingleIn(AppScope::class)
+class CounterComposerImpl @Inject constructor() : CounterComposer {
     @Composable
     override fun Content(state: CounterState, modifier: Modifier) {
         Column(
